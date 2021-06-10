@@ -2,6 +2,12 @@
 
 Coded by Tommy Chiu.
 
+# Completed User Stories
+
+  1. Able to see all available job openings
+  2. Able to login with valid credentials
+  3. Able to register with a new account
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
