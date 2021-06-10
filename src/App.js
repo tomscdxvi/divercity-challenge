@@ -10,10 +10,13 @@ function App() {
 
   return(
   
-    <Container>
+    <Container className="my-4">
+      <h1 className="mb-4">Divercity Jobs</h1>
       {loading && <h1>Loading...</h1>}
       {error && <h1>Error Occurred. Please refresh the page.</h1>}
-      <h1>{jobs.length}</h1>
+      {jobs.map(job => {
+        return <Job key={job.id} job={job} />
+      })}
     </Container>
   )
 }

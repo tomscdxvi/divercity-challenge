@@ -1,17 +1,15 @@
 import { useReducer, useEffect } from 'react'
 var axios = require('axios');
 
+let jobs = [];
+
 const ACTIONS = {
     MAKE_REQUEST: 'make-request',
     GET_DATA: 'get-data',
     ERROR: 'error'
 }
 
-var config = {
-  method: 'get',
-  url: 'https://divercity-test.herokuapp.com/jobs',
-  headers: { }
-};
+const BASE_URL = 'https://divercity-test.herokuapp.com/jobs'
 
 function reducer(state, action) {
     switch (action.type)
@@ -40,12 +38,12 @@ export default function useFetchJobs(params, page){
 
         dispatch({ type: ACTIONS.MAKE_REQUEST});
 
-        axios(config, {
+        axios(BASE_URL, {
             cancelToken: cancelToken.token,
-            params: { markdown: true, page: page, ...params }
+            params: { page: page, ...params }
         })
         .then(res => {
-            dispatch({ type: ACTIONS.GET_DATA, payload: { jobs: (res.data) } });
+            dispatch({ type: ACTIONS.GET_DATA, payload: { jobs: res.data.jobs } });
         })
         .catch( e => {
             dispatch({ type: ACTIONS.ERROR, payload: { error: e } });
