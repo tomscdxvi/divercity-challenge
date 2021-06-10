@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Card, Badge, Button, Collapse } from 'react-bootstrap'
-import ReactMarkdown from 'react-markdown'
 
 export default function Job({ job }) {
     
@@ -11,6 +10,7 @@ export default function Job({ job }) {
             <Card.Body>
                 <div className="d-flex justify-content-between mt-2">
                     <div>
+
                         <Card.Title>
                             {job.title} - <span className="text-muted font-weight-light">{job.company}</span>
                         </Card.Title>
@@ -19,8 +19,10 @@ export default function Job({ job }) {
                         </Card.Subtitle>
                         <Badge variant="secondary" className="mr-2">{job.job_type}</Badge>
                         <Badge variant="secondary">{job.location}</Badge>
-                        <div>
 
+                        <div className="mt-2">
+                            <h5 className="text-primary">Skills</h5>
+                            {job.skills_tag.join(', ')}
                         </div>
                     </div>
                 </div>
@@ -31,6 +33,9 @@ export default function Job({ job }) {
                 </Card.Text>
                 <Collapse in={open}>
                     <div className="mt-4" dangerouslySetInnerHTML={{__html:job.description}}></div>
+                </Collapse>
+                <Collapse in={open}>
+                    <Button variant="info">Apply</Button>
                 </Collapse>
             </Card.Body>
         </Card>
