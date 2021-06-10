@@ -1,6 +1,6 @@
-# divercity-challenge
+# Divercity Challenge
 
-Divercity Frontend Challenge
+Coded by Tommy Chiu.
 
 # Getting Started with Create React App
 
