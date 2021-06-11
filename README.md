@@ -22,7 +22,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 # Languages / Technology Used
 
-`JavaScript` 
+`JavaScript` `React` `Node.js` `Axios` `Express` `Mongoose` 
 
 
 
