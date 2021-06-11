@@ -1,20 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Home from './Home'
 import Register from './RegisterPages/Register'
 import Login from './LoginPages/Login'
-import LoginButton from './components/LoginButton'
 import { Route } from 'react-router-dom'
 
 
-export default function App() {
+function App() {
 
   return (
     <div className="App">
       <Route exact path="/" component={Home} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
-      <LoginButton />
     </div>
   )
 }
+
+export default App;
 
