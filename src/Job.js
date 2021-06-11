@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { Card, Badge, Button, Collapse } from 'react-bootstrap'
+import MyVerticallyCenteredModal from './Modal'
 
 export default function Job({ job }) {
     
     const [open, setOpen] = useState(false)
+    const [modalShow, setModalShow] = useState(false);
 
     return (
         <Card className="mb-4">
@@ -35,9 +37,16 @@ export default function Job({ job }) {
                     <div className="mt-4" dangerouslySetInnerHTML={{__html:job.description}}></div>
                 </Collapse>
                 <Collapse in={open}>
-                    <Button variant="info">Apply</Button>
+                    <Button variant="info" onClick={() => setModalShow(true)}>Apply</Button>
                 </Collapse>
             </Card.Body>
+            
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+
         </Card>
+
     )
 }

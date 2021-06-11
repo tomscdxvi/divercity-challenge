@@ -1,11 +1,11 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
-import NavBar from './NavBar'
+import { Container} from 'react-bootstrap'
+import NavBar from '../NavBar'
 import useRegister from './useRegister'
 import verifyRegister from './verifyRegister'
 
-
 const Register = (submitForm) => {
+
     const {handleChange, values, handleSubmit, errors} = useRegister(verifyRegister, submitForm);
 
     return (

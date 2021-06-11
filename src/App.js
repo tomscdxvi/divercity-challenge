@@ -1,16 +1,11 @@
-import React, { useState } from 'react'
-import useFetchJobs from './useFetchJobs'
-import Job from './Job'
-import { Container, Nav } from 'react-bootstrap'
-import JobsPage from './JobsPage'
-import SearchForm from './SearchForm'
+import React from 'react'
 import Home from './Home'
-import Register from './Register'
-import Login from './Login'
-import {Route, Link} from 'react-router-dom'
+import Register from './RegisterPages/Register'
+import Login from './LoginPages/Login'
+import { Route } from 'react-router-dom'
 
 
-function App() {
+export default function App() {
 
   return (
     <div className="App">
@@ -22,4 +17,3 @@ function App() {
 
 }
 
-export default App;
