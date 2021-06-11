@@ -4,7 +4,7 @@ Coded by Tommy Chiu.
 
 # Completed User Stories
 
-  1. Able to see all available job openings
+  1. Able to see all available job openings (100% DONE)
   2. Able to filter jobs based on location, job_type, and skills_tags (20% DONE)
   3. Able to apply to a job but if user is not logged in, error message will redirect the user to login before applying (60% DONE)
   4. Able to login with valid credentials (80% DONE)
