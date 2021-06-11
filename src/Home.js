@@ -7,16 +7,21 @@ import SearchForm from './SearchForm'
 import NavBar from './NavBar'
 
 function Home() {
-    const [params, setParams] = useState({})
+    const [params, setParams] = useState({});
     const [page, setPage] = useState(1)
     const { jobs, loading, error, hasNextPage } = useFetchJobs(params, page)
   
     function handleParamChange(e) {
-      const param = e.target.name || ''
-      const value = e.target.value || ''
+
+      e.preventDefault();
+
+      const param = e.target.name 
+      const value = e.target.value 
+
       setPage(1)
       setParams(prevParams => {
         return { ...prevParams, [param]: value }
+
       })
     }
 
@@ -25,7 +30,7 @@ function Home() {
             <NavBar />
             <h1 className="mb-4">Divercity Jobs</h1>
 
-            <SearchForm params={params} onParamChange={handleParamChange} />
+            <SearchForm type="text" params={params} onParamChange={handleParamChange}/>
 
             <JobsPage page={page} setPage={setPage} hasNextPage={hasNextPage}/>
 
